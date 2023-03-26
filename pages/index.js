@@ -65,7 +65,6 @@ const customStyles = {
   },
 };
 
-let strName = ["dog", "cat","mouse"];
 
 function Animal(props){
     if(!props.data) return <p>Loading</p>
@@ -89,7 +88,7 @@ export default function Home() {
   const [age, setAge] = React.useState('');
   const [breed, setBreed] = React.useState('');
   const [enter, setEnterElement]= React.useState('');
-  let [elementsArray, setNewArray] = React.useState([]);
+  let   [elementsArray, setNewArray] = React.useState([]);
 
   React.useEffect(()=>{
     fetch('/animals.json').then(data=>data.json()).then(data=>setAnimals(data));
