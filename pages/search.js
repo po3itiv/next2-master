@@ -4,9 +4,6 @@ export default function search (array,enter,setNewArray){
 
     let searchElements = [];
 
-
-    
-
     if (searchByName(array, enter).length != 0) {
         searchElements = searchByName(array, enter);
     } else if (searchByAge(array, enter).length != 0) {
@@ -17,31 +14,44 @@ export default function search (array,enter,setNewArray){
 
 
     if (Object.keys(searchElements).length !==0){
+        console.log(searchElements);
+    
         setNewArray([...searchElements]);
-    }else{
-        setNewArray([]);
     }
+    
 }
 
 function searchByName(array, enter){
     let oleg = JSON.stringify("./public/animals.json", );
     console.log(JSON.parse(oleg));
-
-    const searchElements = array.filter(elem => (elem.content).toUpperCase().indexOf(enter.toUpperCase())!==-1);
-
+    const searchElements = [];    
+    for(let i=0;i<array.length;i++){
+        if((array[i].content).toUpperCase().indexOf(enter.toUpperCase())!==-1){
+        searchElements.push(array[i]);
+        console.log(searchElements);
+        }
+        }
     return searchElements;
 }
 function searchByAge(array, enter){
     let oleg = JSON.stringify("./public/animals.json", );
     console.log(JSON.parse(oleg));
-
-    const searchElements = array.filter(elem => (elem.age).toUpperCase().indexOf(enter.toUpperCase())!==-1);
+    const searchElements = [];    
+    for(let i=0;i<array.length;i++){
+        if((array[i].age).toUpperCase().indexOf(enter.toUpperCase())!==-1){
+        searchElements.push(array[i]);
+        }
+        }
     return searchElements;
 }
 function searchByBreed(array, enter){
     let oleg = JSON.stringify("./public/animals.json", );
     console.log(JSON.parse(oleg));
-
-    const searchElements = array.filter(elem => (elem.header).toUpperCase().indexOf(enter.toUpperCase())!==-1);
+    const searchElements = [];    
+    for(let i=0;i<array.length;i++){
+        if((array[i].header).toUpperCase().indexOf(enter.toUpperCase())!==-1){
+        searchElements.push(array[i]);
+        }
+        }
     return searchElements;
 }
