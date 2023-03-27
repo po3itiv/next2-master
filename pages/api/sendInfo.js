@@ -10,7 +10,7 @@ parseddata.push({
 "header":body.name,
 "age": body.age,
 'content': body.breed,
-'img': jopa(),
+'img': newww(),
 });
 // Превращаем обратно в строку
 let data = JSON.stringify(parseddata);
@@ -20,19 +20,19 @@ fs.writeFileSync('././public/animals.json', data);
     res.status(200).json({ status: 'OK' });
     };
     
-        class Jopa {
+        class New {
             static count = 0;
             static strName = ['cat.png','dog.jpg','mouse.jpeg','cow.jpg','hom.jpg','ara.jpg'];
             }
             
-            function jopa() {
-            if (Jopa.count < Jopa.strName.length) {
-            let temp = Jopa.strName[Jopa.count];
-            Jopa.count++;
+            function newww() {
+            if (New.count < New.strName.length) {
+            let temp = New.strName[New.count];
+            New.count++;
             console.log(temp);
             return temp;
             } else {
-            Jopa.count = 0;
-            return Jopa.strName[Jopa.count];
+            New.count = 0;
+            return New.strName[New.count];
             }
             }
